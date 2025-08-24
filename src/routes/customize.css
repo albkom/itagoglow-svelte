@@ -1,0 +1,14 @@
+:root {
+	--dominant: #355070;
+	--complement: #6d597a;
+	--text: #eef4ed;
+
+    --action: #e56b6f;
+    --highlight: #eaac8b;
+
+    --alternative: #b56576;
+}
+
+.test {
+	background-color: red !important;
+}
