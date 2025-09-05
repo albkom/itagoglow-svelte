@@ -36,48 +36,55 @@
 
 <section id="colors" class="txt--left">
 	<h2 class="font-header">Colors</h2>
-	<div class="pad flx-x gap-m">
-		<div class="flx-x left txt--left">
-			<span>
-				<strong>Dominant</strong> set the vibes, serving as the main background and the most prominent
-				color throughout the page.
-			</span>
-			<span>
-				<strong>Complement</strong> one serves to provide slight contrast and visual interest.
-			</span>
-			<span><strong>Text</strong> is the color for most of texts </span>
+	<div class="flx-x gap-m">
+		<div class="flx-x left txt--left gap-m">
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-dominant border-s">Dominant</code>
+				<span>
+					Set the vibes, serving as the main background and the most prominent color throughout the
+					page.
+				</span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-complement">Complement</code>
+				<span>Serves to provide slight contrast and visual interest. </span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-text">Text</code>
+				<span>Is the color for most of texts.</span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-action">Action</code>
+				<span>Is your go-to color for buttons and things you want dem to click.</span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-highlight">Highlight</code>
+				<span>Makes anything pop, use it to grab attention and add a little glow.</span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-danger">Danger</code>
+				<span>Is used for errors, warnings, or destructive actions.</span>
+			</div>
+			<div class="flx-x row left gap-m">
+				<code class="badge w-20 flx pad-s back-alt">Alternative</code>
+				<span>Is an extra accent color for secondary elements.</span>
+			</div>
 		</div>
-		<div class="card--complement pad flx left txt--left">
-			<span>
-				<strong>Action</strong>
-				is your go-to color for buttons and things you want dem to click.
-			</span>
-			<span>
-				<strong>Highlight</strong> makes anything pop, use it to grab attention and add a little glow.
-			</span>
-			<span>
-				<strong>Danger</strong> is used for errors, warnings, or destructive actions.
-			</span>
-			<span>
-				<strong>Alternative</strong> is an extra accent color for secondary elements.
-			</span>
-			<hr />
-		</div>
-		<span>
-			<strong>Light</strong>, <strong>Lighter</strong>,
-			<strong>Dark</strong>, and <strong>Darker</strong> are variations of the main colors, useful for
-			backgrounds, borders, and subtle accents.
-		</span>
 		<div class="card--complement flx-x row around gap-m pad">
-			<div class="badge pad-s back-lighter">lighter</div>
-			<div class="badge pad-s back-light">light</div>
-			<div class="badge pad-s back-dominant">dominant</div>
-			<div class="badge pad-s back-dark">dark</div>
-			<div class="badge pad-s back-darker border-s">darker</div>
-		</div>
-		<div class="flx-x row between">
-			<button class="danger">danger</button>
-			<button class="action">action</button>
+			<div class="flx-x">
+				<span>
+					<strong>Light</strong>, <strong>Lighter</strong>,
+					<strong>Dark</strong>, and <strong>Darker</strong> are variations of the main colors, useful
+					for backgrounds, borders, and subtle accents.
+				</span>
+				<div class="flx-x row around gap-m pad">
+					<div class="badge pad-s back-lighter">lighter</div>
+					<div class="badge pad-s back-light">light</div>
+					<div class="badge pad-s back-dominant">dominant</div>
+					<div class="badge pad-s back-dark">dark</div>
+					<div class="badge pad-s back-darker border-s">darker</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr class="h-2vh" />

@@ -49,6 +49,16 @@
 			closeMenu();
 		}
 	}
+
+	// import { onMount } from 'svelte';
+	// let svgContent = '';
+
+	// onMount(async () => {
+	// 	const response = await fetch('/assets/logo.svg');
+	// 	if (response.ok) {
+	// 		svgContent = await response.text();
+	// 	}
+	// });
 </script>
 
 <svelte:head>
@@ -62,14 +72,14 @@
 <!-- Header with Navigation -->
 <header class="flx-x pad-m">
 	<nav class="flx row between">
-		<button class="nav-logo button--icon" aria-label="Home" onclick={() => goto('/')}>
+		<button class="circle" aria-label="Home" onclick={() => goto('/')}>
 			<svg width="24" height="24" viewBox="0 0 24 24">
 				<path
 					d="M12 2L2 7v10c0 5.55 3.84 10 9 11 1.16.21 2.31.21 3.47 0 5.16-1 9-5.45 9-11V7l-10-5z"
 				/>
 			</svg>
 		</button>
-		<button class="nav-open button--icon" aria-label="Open navigation menu" onclick={toggleMenu}>
+		<button class="circle" disabled aria-label="Open navigation menu" onclick={toggleMenu}>
 			<svg width="24" height="24" viewBox="0 0 24 24">
 				<path d="M3 12h18M3 6h18M3 18h18" />
 			</svg>
@@ -111,10 +121,33 @@
 
 <div class="relative flx-xy">
 	<!-- Main Content -->
-	<main class="flx-xy pad-m scroll compensate-header">
+	<main class="flx-xy pad-m compensate-header">
 		{@render children?.()}
 	</main>
 
 	<!-- Footer -->
-	<footer class="flx-x h-10vh mt-10vh pad back-darker"></footer>
+	<footer class="flx-x col top right pad">
+		<hr class="h-10vh" />
+		<div class="flx-x right">
+			<small class="txt--s">current version 1.0.2</small>
+			<small
+				><a href="https://github.com/albkom/itagoglow" target="_blank" rel="noopener"
+					>github.com/albkom/itagoglow</a
+				>
+			</small>
+			<!-- <a href="mailto:alb.kom.dev@gmail.com">alb.kom.dev@gmail.com</a> -->
+		</div>
+		<hr />
+		<div class="flx-x right gap-m">
+			<small class="txt--s"
+				>Site developed by <a href="https://itagoglow.web.app" target="_blank" rel="noopener"
+					>LOGO</a
+				>
+			</small>
+			<small class="txt--s">
+				Made with <a href="https://svelte.dev" target="_blank" rel="noopener">Svelte(Kit)</a>
+			</small>
+		</div>
+		<hr class="h-10vh" />
+	</footer>
 </div>

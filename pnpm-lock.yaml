@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       itagoglow:
-        specifier: ^0.0.7
-        version: 0.0.7
+        specifier: ^1.0.2
+        version: 1.0.2
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -812,8 +812,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  itagoglow@0.0.7:
-    resolution: {integrity: sha512-dYr7QAGH11JQutz9/I7rI02nzQpyKJeXZUMB/0p4J/4qBEFZP0UXdCQDskQrnhNH1ellUPfL1O0bQuZCyWwu6g==}
+  itagoglow@1.0.2:
+    resolution: {integrity: sha512-gFSQtgjVAyBkMJt1YMJKpZB7avp4ctt3elx9cc1gpA4wxKV+VZSpolx2dQ3osICp5mwQ9WWz4tPZLAlYFruJrQ==}
 
   js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
@@ -1846,7 +1846,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  itagoglow@0.0.7: {}
+  itagoglow@1.0.2: {}
 
   js-yaml@4.1.0:
     dependencies:
