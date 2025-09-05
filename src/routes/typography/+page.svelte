@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <span
 	>Experiment with different font sizes, weights and alignments to achieve the perfect visual
 	hierarchy and emphasis for your content.</span

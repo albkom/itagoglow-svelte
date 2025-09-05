@@ -2,11 +2,6 @@
 	import 'itagoglow/itagoglow.min.css';
 	import './customize.css';
 
-	// // If you're using a fallback (i.e. SPA mode) you don't need to prerender all
-	// // pages by setting this here, but should prerender as many as possible to
-	// // avoid large performance and SEO impacts
-	// export const prerender = true;
-
 	let { children } = $props();
 
 	import { goto } from '$app/navigation';
@@ -94,7 +89,7 @@
 	</div>
 	<nav class="flx">
 		<ul class="flx">
-			<li class="nav-link" style:opacity={navLinksVisible ? '1' : '0'}>
+			<!-- <li class="nav-link" style:opacity={navLinksVisible ? '1' : '0'}>
 				<a href="#colors" onclick={handleNavClick}>Colors</a>
 			</li>
 			<li class="nav-link" style:opacity={navLinksVisible ? '1' : '0'}>
@@ -114,7 +109,7 @@
 			</li>
 			<li class="nav-link" style:opacity={navLinksVisible ? '1' : '0'}>
 				<a href="#tables" onclick={handleNavClick}>Tables</a>
-			</li>
+			</li> -->
 		</ul>
 	</nav>
 </div>

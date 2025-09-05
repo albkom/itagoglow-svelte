@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <section id="spaces">
 	<h2 class="font-header">Spacings and Sizes</h2>
 	<hr class="h-5vh" />

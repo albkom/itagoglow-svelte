@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <section id="layout">
 	<h2 class="font-header">Flexing</h2>
 	<div class="flx gap-m txt--left">
