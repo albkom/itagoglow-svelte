@@ -1,14 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Podkova:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 :root {
+	--font-header: 'Audiowide', monospace;
+	--font-main: 'Cairo', monospace;
+	--dominant: #031413;
+	--complement: #6d597a;
+	--text: #eef4ed;
+
+	--action: #db29de;
+	--highlight: #b68833;
+
+	--alternative: #b56576;
+
+	--main-pad: 0 1rem;
+}
+
+.texture {
+	background: url('../lib/assets/background.png');
+}
+.texture--white {
+	background: url('../lib/assets/background-noise.png');
+	opacity: 0.2;
+	/* animation: noise 10s infinite linear; */
+}
+@keyframes noise {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+/* :root {
+	--font-header: "Audiowide", monospace;
+	--font-main: "Cairo", monospace;
 	--dominant: #355070;
 	--complement: #6d597a;
 	--text: #eef4ed;
 
-    --action: #e56b6f;
-    --highlight: #eaac8b;
+	--action: #e56b6f;
+	--highlight: #eaac8b;
 
-    --alternative: #b56576;
-}
+	--alternative: #b56576;
+
+	--main-pad: 0 1rem;
+} */
 
 .test {
 	background-color: red !important;
+}
+
+.slim {
+	height: auto;
+	background-color: var(--dark);
+	color: var(--text);
+	padding: 0;
+}
+.slim nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+}
+.slim menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+.slim a {
+	color: var(--text);
+	font-weight: 400;
+	text-decoration: none;
+	text-shadow: 0 0 5px var(--darker);
+}
+.slim button {
+	color: var(--action);
+	font-weight: 400;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+}
+.slim button svg {
+	height: 1.7rem;
+	width: 1.7rem;
+	stroke: var(--action) !important;
+}
+.slim button svg path {
+	stroke: var(--action) !important;
+}
+.slim .logo {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	font-size: 1rem;
+}
+.slim .logo svg {
+	height: 1.7rem;
+	width: 1.7rem;
+	color: var(--action) !important;
+}
+
+@media (max-width: 600px) {
+	.slim menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem 1rem;
+		display: none;
+	}
+	.slim .hamburger {
+		display: block;
+	}
 }

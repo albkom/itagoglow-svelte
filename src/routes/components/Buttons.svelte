@@ -1,5 +1,5 @@
-<section id="buttons">
-	<h2 class="font-header">Buttons</h2>
+<section id="buttons" class="compensate-header">
+	<h2 class="font-header highlight">Buttons</h2>
 	<hr />
 	<div class="flx gap-m txt--left">
 		<span class="txt--left"

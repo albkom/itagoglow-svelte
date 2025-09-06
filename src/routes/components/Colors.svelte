@@ -34,8 +34,8 @@
 	});
 </script>
 
-<section id="colors" class="txt--left">
-	<h2 class="font-header">Colors</h2>
+<section id="colors" class="compensate-header txt--left">
+	<h2 class="font-header highlight">Colors</h2>
 	<div class="flx-x gap-m">
 		<div class="flx-x left txt--left gap-m">
 			<div class="flx-x row left gap-m">

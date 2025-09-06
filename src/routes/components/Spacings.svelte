@@ -5,8 +5,8 @@
 	}));
 </script>
 
-<section>
-	<h2 class="font-header">Sizes and Spacings</h2>
+<section id="spaces" class="compensate-header txt--left">
+	<h2 class="font-header highlight">Sizes and Spacings</h2>
 	<div class="flx left gap-m">
 		<div class="flx-x left txt--left">
 			<span>

@@ -2,7 +2,7 @@
 </script>
 
 <section id="spaces">
-	<h2 class="font-header">Spacings and Sizes</h2>
+	<h2 class="font-header highlight">Spacings and Sizes</h2>
 	<hr class="h-5vh" />
 	<div class="card--dark pad row top gap-m">
 		<div class="badge back-light pad-s">1</div>

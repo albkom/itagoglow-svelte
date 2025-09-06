@@ -1,5 +1,5 @@
-<section id="typography" class="txt--left">
-	<h2 class="font-header">Typography</h2>
+<section id="typography" class="compensate-header txt--left">
+	<h2 class="font-header highlight">Typography</h2>
 	<span>
 		Combine header and body fonts to create a distinct look and feel for your site. This example
 		uses

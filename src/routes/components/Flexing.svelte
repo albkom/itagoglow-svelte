@@ -1,5 +1,5 @@
-<section id="layout">
-	<h2 class="font-header">Flexing</h2>
+<section id="flexing" class="compensate-header">
+	<h2 class="font-header highlight">Flexing</h2>
 	<div class="flx gap-m txt--left">
 		<span>
 			<code class="badge back-dark pad-s">.flx</code> gives you a vertical stack: everything lines up
@@ -20,9 +20,9 @@
 		</span>
 	</div>
 	<hr class="h-5vh" />
-	<div class="flx gap-m txt--left">
+	<div class="flx-x gap-m txt--left">
 		<h3>Filling</h3>
-		<span>
+		<span class="txt--left">
 			Try the different
 			<code class="badge back-dark pad-s">.flx</code> variations to instantly fill, center, or stretch
 			your content. No fuss, just fast, glowing layouts.
