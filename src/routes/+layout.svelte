@@ -2,6 +2,7 @@
 	import 'itagoglow/itagoglow.min.css';
 	import './customize.css';
 	import Logo from './components/Logo.svelte';
+	import { versionItagoglow, versionLocal } from '$lib/versions';
 
 	let { children } = $props();
 
@@ -15,18 +16,6 @@
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
-
-		if (menuOpen) {
-			setTimeout(() => {
-				menuHeaderVisible = true;
-				setTimeout(() => {
-					navLinksVisible = true;
-				}, 100);
-			}, 100);
-		} else {
-			menuHeaderVisible = false;
-			navLinksVisible = false;
-		}
 	}
 
 	function closeMenu() {
@@ -84,13 +73,39 @@
 	import { writable } from 'svelte/store';
 
 	const scale = writable(1);
-
+	let activeSection = $state('colors');
 	onMount(() => {
+		function updateActiveSection() {
+			const sections = [
+				{ id: 'colors' },
+				{ id: 'flexing' },
+				{ id: 'typography' },
+				{ id: 'buttons' },
+				{ id: 'tables' },
+				{ id: 'spaces' },
+				{ id: 'cards' }
+			];
+			let found = '';
+			for (const section of sections) {
+				const el = document.getElementById(section.id);
+				if (el) {
+					const rect = el.getBoundingClientRect();
+					if (rect.top <= 80 && rect.bottom > 80) {
+						found = section.id;
+						break;
+					}
+				}
+			}
+			activeSection = found;
+			console.log('Active Section:', activeSection);
+		}
+
 		async function handleScroll() {
 			const scrollY = window.scrollY || window.pageYOffset;
 			// Scale from 1 (top) to 1.2 (scrolled 500px or more)
 			const newScale = 1 + (scrollY / window.innerHeight) * 0.05;
 			scale.set(newScale);
+			updateActiveSection();
 		}
 		window.addEventListener('scroll', handleScroll);
 		handleScroll();
@@ -123,30 +138,80 @@
 		</button>
 	</nav> -->
 	<nav class="flx row between">
-		<button class="logo" aria-label="Home" onclick={() => goto('/')}>
+		<button class="glow glow-action" aria-label="Home" onclick={() => goto('/')}>
 			<Logo />
 		</button>
 		<menu class="flx row gap-m hide-on-mobile">
-			<a href="#colors" onclick={handleNavClick}>Colors</a>
-			<a href="#flexing" onclick={handleNavClick}>Flexing</a>
-			<a href="#typography" onclick={handleNavClick}>Typography</a>
-			<a href="#buttons" onclick={handleNavClick}>Buttons</a>
-			<a href="#tables" onclick={handleNavClick}>Tables</a>
-			<a href="#spaces" onclick={handleNavClick}>Spaces</a>
-			<a href="#cards" onclick={handleNavClick}>Cards</a>
+			<a
+				class="glow glow-action"
+				href="#colors"
+				onclick={handleNavClick}
+				class:button={activeSection === 'colors'}>Colors</a
+			>
+			<a
+				class="glow glow-action"
+				href="#flexing"
+				onclick={handleNavClick}
+				class:button={activeSection === 'flexing'}>Flexing</a
+			>
+			<a
+				class="glow glow-action"
+				href="#typography"
+				onclick={handleNavClick}
+				class:button={activeSection === 'typography'}>Typography</a
+			>
+			<a
+				class="glow glow-action"
+				href="#spaces"
+				onclick={handleNavClick}
+				class:button={activeSection === 'spaces'}>Spaces</a
+			>
+			<a
+				class="glow glow-action"
+				href="#buttons"
+				onclick={handleNavClick}
+				class:button={activeSection === 'buttons'}>Buttons</a
+			>
+			<a
+				class="glow glow-action"
+				href="#cards"
+				onclick={handleNavClick}
+				class:button={activeSection === 'cards'}>Cards</a
+			>
+			<a
+				class="glow glow-action"
+				href="#tables"
+				onclick={handleNavClick}
+				class:button={activeSection === 'tables'}>Tables</a
+			>
 		</menu>
-		<button class="" aria-label="Open navigation menu" onclick={setRandomColors}>
-			<ChaosWheel />
-		</button>
+		<div class="flx row">
+			<button class="circle alt glow-alt" aria-label="Open secondary menu" onclick={toggleMenu}>
+				<svg width="24" height="24" viewBox="0 0 24 24">
+					<path d="M6 9l6 6 6-6" />
+				</svg>
+			</button>
+			<button class="glow glow-action" aria-label="Randomize colors" onclick={setRandomColors}>
+				<ChaosWheel />
+			</button>
+		</div>
 	</nav>
+	{#if menuOpen}
+		<div class="flx-x absolute back-dominant grad-down-darker z-0 pad">
+			<div class="flx-x mt-10vh gap-m">
+				<a class="button" href="#about" onclick={handleNavClick}>Other sites made with itagoglow</a>
+				<a class="button" href="#contact" onclick={handleNavClick}>Contact</a>
+			</div>
+		</div>
+	{/if}
 </header>
 
 <!-- Menu Overlay -->
-<div id="menu" class="flx-xy" style:transform={menuOpen ? 'translateY(0%)' : 'translateY(-100%)'}>
+<!-- <div id="menu" class="flx-xy" style:transform={menuOpen ? 'translateY(0%)' : 'translateY(-100%)'}>
 	<div id="menu-header" class="flx" style:opacity={menuHeaderVisible ? '1' : '0'}>
 		<h2 class="font-header">Navigation</h2>
 	</div>
-</div>
+</div> -->
 
 <div class="flx-xy back-dominant grad-down-dark">
 	<div
@@ -165,7 +230,7 @@
 			<hr class="h-50vh" />
 			<div class="flx-x row top between">
 				<div class="flx left gap-m">
-					<small class="txt--s">latest version 1.0.4</small>
+					<!-- <small class="txt--s">latest version {versionItagoglow}</small> -->
 					<small class="txt--s"
 						><a href="https://github.com/albkom/itagoglow" target="_blank" rel="noopener"
 							>github.com/albkom/itagoglow</a
@@ -181,9 +246,10 @@
 					>
 				</div>
 				<div class="flx right gap-m">
-					<small class="txt--s">current version 1.0.4</small>
+					<small class="txt--s">current version {versionItagoglow}</small>
+					<small class="txt--s">site version {versionLocal}</small>
 					<small class="txt--s"
-						>Site developed by <a href="https://itagoglow.web.app" target="_blank" rel="noopener"
+						>developed by <a href="https://itagoglow.web.app" target="_blank" rel="noopener"
 							>LOGO</a
 						>
 					</small>

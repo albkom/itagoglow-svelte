@@ -36,63 +36,69 @@
 
 <section id="colors" class="compensate-header txt--left">
 	<h2 class="font-header highlight">Colors</h2>
-	<div class="flx-x gap-m">
+	<div class="flx-x gap-">
 		<div class="flx-x left txt--left gap-m">
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-dominant border-s">Dominant</code>
 				<span>
-					Set the vibes, serving as the main background and the most prominent color throughout the
-					page.
+					This is your main vibe-setter—think of it as the hero color, painting the whole scene and
+					stealing the spotlight.
 				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-complement">Complement</code>
-				<span>Serves to provide slight contrast and visual interest. </span>
+				<span>
+					Your sidekick color—adds a lil’ contrast and keeps things fresh, so it’s never boring.
+				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-text">Text</code>
-				<span>Is the color for most of texts.</span>
+				<span>
+					The go-to for all your words—keeps your text crisp, clean, and easy to vibe with.
+				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-action">Action</code>
-				<span>Is your go-to color for buttons and things you want dem to click.</span>
+				<span>
+					Your “click me!” color—perfect for buttons, links, and anything you want folks to smash.
+				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-highlight">Highlight</code>
-				<span>Makes anything pop, use it to grab attention and add a little glow.</span>
+				<span>
+					Make it pop! Use this to draw eyes and add that extra glow where you want the hype.
+				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-danger">Danger</code>
-				<span>Is used for errors, warnings, or destructive actions.</span>
+				<span>
+					Red alert! This one’s for errors, warnings, or anything that needs a “yo, watch out!”
+					vibe.
+				</span>
 			</div>
 			<div class="flx-x row left gap-m">
 				<code class="badge w-20 flx pad-s back-alt">Alternative</code>
-				<span>Is an extra accent color for secondary elements.</span>
+				<span>
+					Your wildcard—an extra accent for when you wanna switch it up or add some extra flavor.
+				</span>
 			</div>
 		</div>
-		<div class="card--complement flx-x row around gap-m pad">
-			<div class="flx-x">
-				<span>
-					<strong>Light</strong>, <strong>Lighter</strong>,
-					<strong>Dark</strong>, and <strong>Darker</strong> are variations of the main colors, useful
-					for backgrounds, borders, and subtle accents.
-				</span>
-				<div class="flx-x row around gap-m pad">
-					<div class="badge pad-s back-lighter">lighter</div>
-					<div class="badge pad-s back-light">light</div>
-					<div class="badge pad-s back-dominant">dominant</div>
-					<div class="badge pad-s back-dark">dark</div>
-					<div class="badge pad-s back-darker border-s">darker</div>
-				</div>
-			</div>
+		<span class="txt--left mt-3vh">Experiment with tints and shades to customize your palette.</span
+		>
+		<div class="flx row rounded overflow-hidden">
+			<div class="flx h-10vh ar-1 back-lighter">light</div>
+			<div class="flx h-10vh ar-1 back-light">light</div>
+			<div class="flx h-10vh ar-1 back-dominant">dominant</div>
+			<div class="flx h-10vh ar-1 back-dark">dark</div>
+			<div class="flx h-10vh ar-1 back-darker">darker</div>
 		</div>
 	</div>
-	<hr class="h-2vh" />
+	<hr class="h-5vh" />
 	<div class="card--dark flx-x pad gap-m">
-		<h3 class="font-header">Pick your palette!</h3>
+		<h3 class="font-header">Craft Your Color Vibe!</h3>
 		<span class="txt--justify">
-			Click a color to instantly update the look of your page. Try out different combos and see your
-			style come alive!
+			Tap any swatch to remix your site’s style in real time. Mix, match, and watch your palette
+			pop—your perfect look is just a click away!
 		</span>
 		<div class="flx-x row wrap gap-s">
 			{#each colors as color}

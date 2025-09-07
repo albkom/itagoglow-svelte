@@ -87,13 +87,19 @@
 	padding: 0;
 	border: none;
 }
+.slim button.alt {
+	color: var(--alt);
+}
+.slim button.highlight {
+	color: var(--highlight);
+}
 .slim button svg {
 	height: 1.7rem;
 	width: 1.7rem;
-	stroke: var(--action) !important;
+	stroke: currentColor !important;
 }
 .slim button svg path {
-	stroke: var(--action) !important;
+	stroke: currentColor !important;
 }
 .slim .logo {
 	background-color: transparent;
@@ -104,7 +110,7 @@
 .slim .logo svg {
 	height: 1.7rem;
 	width: 1.7rem;
-	color: var(--action) !important;
+	color: currentColor !important;
 }
 
 @media (max-width: 600px) {
@@ -119,4 +125,13 @@
 	.slim .hamburger {
 		display: block;
 	}
+}
+
+.lh-150 {
+	line-height: 150%;
+}
+
+#logo-background svg {
+	height: 25vh;
+	fill: var(--dark);
 }
