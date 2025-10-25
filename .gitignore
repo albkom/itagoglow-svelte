@@ -26,3 +26,9 @@ vite.config.ts.timestamp-*
 .firebase/
 .firebaserc
 firebase.json
+
+
+.vscode/
+
+pnpm-lock.yaml
+package-lock.json

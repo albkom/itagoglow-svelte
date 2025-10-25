@@ -1,67 +1,67 @@
 <section id="cards" class="compensate-header txt--left">
 	<h2 class="font-header highlight">Cards</h2>
 	<hr />
-	<div class="flx gap-m txt--left">
+	<div class="flx gap-m left txt--left">
 		<span class="txt--left">
-			Cards are created using the <code>card</code> class. They provide a flexible container for various
-			types of content.
+			Use the <code class="badge back-darker pad-s">.card</code> class to create containers for any type
+			of content, including text, images, and actions.
 		</span>
+		<span> Cards have no padding by default. Add padding using specific classes. </span>
 		<div class="flx row wrap gap-m">
-			<div class="card">
-				<h3>Basic Card</h3>
-				<p>This is a simple card with basic styling.</p>
+			<div class="flx-x gap-s">
+				<code class="badge back-darker pad-s">.card</code>
+				<div class="card">
+					<h3>Basic Card</h3>
+					<p>This is a simple card with basic styling.</p>
+				</div>
+			</div>
+			<div class="flx-x row gap-m">
+				<div class="flx gap-s">
+					<code class="badge back-darker pad-s">.card.pad-s</code>
+					<div class="card pad-s">
+						<h3>Basic Card</h3>
+						<p>This is a simple card with basic styling.</p>
+					</div>
+				</div>
+				<div class="flx gap-s">
+					<code class="badge back-darker pad-s">.card.pad</code>
+					<div class="card pad">
+						<h3>Basic Card</h3>
+						<p>This is a simple card with basic styling.</p>
+					</div>
+				</div>
 			</div>
 		</div>
-		<hr />
-
-		<span class="txt--left">
-			Cards can be styled with color classes for different purposes or states. Use classes like
-			<code>.highlight</code>, <code>.danger</code>, or <code>.alt</code> to modify their appearance.
+		<span class="txt--left mt-1vh">
+			Cards can be styled with color classes for different purposes or states.
 		</span>
 		<div class="flx-x row wrap gap-m">
-			<div class="card highlight w-30">
+			<div class="card--highlight pad w-30">
 				<h3>Highlighted Card</h3>
 				<p>A card with highlight styling</p>
 			</div>
-			<div class="card danger w-30">
-				<h3>Danger Card</h3>
-				<p>A card for warnings or errors</p>
+			<div class="card--dark pad w-30">
+				<h3>Dark Card</h3>
+				<p>A card for dark</p>
 			</div>
-			<div class="card alt w-30">
-				<h3>Alternative Card</h3>
-				<p>A card with alternative styling</p>
-			</div>
-		</div>
-		<hr />
-
-		<span>
-			Cards can be sized using width classes like <code>.w-30</code> or <code>.w-50</code>. Combine
-			with padding classes for different spacing needs.
-		</span>
-		<div class="flx row wrap gap-m">
-			<div class="card w-50 pad-l">
-				<h3>Wide Card</h3>
-				<p>A card that takes up more space with larger padding</p>
-			</div>
-			<div class="card w-20">
-				<h3>Narrow Card</h3>
-				<p>A more compact card</p>
+			<div class="card--darker pad w-30">
+				<h3>Darker Card</h3>
+				<p>A card with darker styling</p>
 			</div>
 		</div>
 		<hr />
-
 		<span>
 			Cards can contain various content types including text, images, and interactive elements.
 		</span>
 		<div class="flx-x row wrap gap-m">
-			<div class="card--dark pad w-40 gap-s">
+			<div class="card pad w-40 gap-s">
 				<!-- <img src="https://via.placeholder.com/300x200" alt="Example image" /> -->
 				<div class="flx-x ar-1 back-darker"></div>
 				<h3>Media Card</h3>
 				<p>A card containing an image and text</p>
 				<button class="highlight">Action</button>
 			</div>
-			<div class="card--dark pad w-40">
+			<div class="card--dark pad w-40 glow--l glow-action">
 				<h3>Interactive Card</h3>
 				<p>A card with interactive elements</p>
 				<div class="flx-x gap-s">

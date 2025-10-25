@@ -6,7 +6,7 @@
 	let isVisible = $state(true);
 	let hideTimeout: number;
 
-    let scroller: HTMLDivElement;
+	let scroller: HTMLDivElement;
 	onMount(() => {
 		// Initial observer setup
 		const observer = new IntersectionObserver(
@@ -29,17 +29,17 @@
 		// Set initial hide timeout
 		hideProgress();
 
-        scroller = document.getElementById('scroller') as HTMLDivElement;
+		scroller = document.getElementById('scroller') as HTMLDivElement;
 
-         // Pause hiding when hovering over the menu
+		// Pause hiding when hovering over the menu
 		return () => observer.disconnect();
 	});
 
 	function showProgress() {
 		console.log('showProgress');
 		isVisible = false;
-        scroller.style.transform = 'translateX(-100%)';
-        scroller.style.opacity = '1';
+		scroller.style.transform = 'translateX(-100%)';
+		scroller.style.opacity = '1';
 		clearTimeout(hideTimeout);
 		hideProgress();
 	}
@@ -47,14 +47,15 @@
 	function hideProgress() {
 		hideTimeout = setTimeout(() => {
 			isVisible = false;
-            scroller.style.transform = 'translateX(+100%)';
-            scroller.style.opacity = '0';
+			scroller.style.transform = 'translateX(+100%)';
+			scroller.style.opacity = '0';
 		}, 2000);
 	}
 </script>
 
 <div class="progress-indicator flx row" role="navigation">
-	<button class="flx-x h-25vh w-1rem" aria-label="Show progress indicator" onclick={showProgress}></button>
+	<button class="flx-x h-25vh w-1rem" aria-label="Show progress indicator" onclick={showProgress}
+	></button>
 	<div id="scroller" class="flx-x gap-m" class:visible={isVisible}>
 		{#each sections as section}
 			<a
@@ -85,11 +86,10 @@
 		/* pointer-events: none; */
 	}
 	#scroller {
-        padding-right: 1.5rem;
-        transition: all 0.3s ease;
-        background-color: color-mix(in srgb, var(--dark) 30%, color 70%);
+		padding-right: 1.5rem;
+		transition: all 0.3s ease;
+		background-color: color-mix(in srgb, var(--dark) 30%, color 70%);
 	}
-	.progress-indicator.visible,
 	.progress-indicator:hover {
 		opacity: 1;
 		pointer-events: all;
@@ -104,8 +104,7 @@
 		transition: all 0.3s ease;
 	}
 
-	.progress-dot:hover,
-	.progress-label.active {
+	.progress-dot:hover {
 		/* background: var(--glow-color-highlight); */
 		color: var(--highlight) !important;
 		opacity: 1;

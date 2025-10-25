@@ -111,6 +111,63 @@
 		handleScroll();
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
+
+	// Initialize copy functionality for code snippets
+	onMount(() => {
+		const snippets = document.querySelectorAll('code.snippet');
+		snippets.forEach((snippet) => {
+			// Create the copy button
+			const button = document.createElement('button');
+			button.type = 'button';
+			button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+			snippet.appendChild(button);
+
+			button.addEventListener('click', async (e) => {
+				e.stopPropagation();
+				let text = snippet.textContent;
+				
+				// Format the text for CSS
+				if (text) {
+					// Remove button text if present
+					text = text.replace('Copied!', '').trim();
+					
+					// Clean up whitespace and format CSS
+					text = text
+						.replace(/\r\n/g, '\n')
+						.replace(/\s+/g, ' ')
+						.replace(/:\s+/g, ': ')
+						.replace(/;\s+/g, ';\n')
+						.replace(/{\s+/g, ' {\n')
+						.replace(/}\s+/g, '}\n')
+						.replace(/,\s+/g, ', ');
+
+					// Add proper indentation
+					const lines = text.split('\n');
+					let indent = 0;
+					text = lines
+						.map(line => {
+							line = line.trim();
+							if (line.includes('}')) indent -= 1;
+							const formatted = `${'\t'.repeat(Math.max(0, indent))}${line}`;
+							if (line.includes('{')) indent += 1;
+							return formatted;
+						})
+						.join('\n');
+				}
+
+				try {
+					await navigator.clipboard.writeText(text || '');
+					const original = button.innerHTML;
+					button.innerHTML = 'Copied!';
+					setTimeout(() => {
+						button.innerHTML = original;
+					}, 1000);
+				} catch (err) {
+					console.error('Failed to copy text: ', err);
+				}
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -215,7 +272,7 @@
 
 <div class="flx-xy back-dominant grad-down-dark">
 	<div
-		class="flx-xy h-100vh z-0 texture--white"
+		class="flx h-100vh w-100vh z-0 texture--white"
 		style="position: fixed; top: 0; transform: scale({$scale}) rotate({$scale * 90}deg);"
 	></div>
 	<div class="relative flx-xy z-1">
@@ -249,8 +306,7 @@
 					<small class="txt--s">current version {versionItagoglow}</small>
 					<small class="txt--s">site version {versionLocal}</small>
 					<small class="txt--s"
-						>developed by <a href="https://itagoglow.web.app" target="_blank" rel="noopener"
-							>LOGO</a
+						>developed by <a href="https://itagoglow.web.app" target="_blank" rel="noopener">LOGO</a
 						>
 					</small>
 					<small class="txt--s">

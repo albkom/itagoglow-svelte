@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "0.4",
+  "version": "0.9",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -37,7 +37,11 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
-    ]
+    ],
+    "overrides": {
+      "cookie@<0.7.0": ">=0.7.0",
+      "devalue@<5.3.2": ">=5.3.2"
+    }
   },
   "dependencies": {
     "itagoglow": "^1.0.4"

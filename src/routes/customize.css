@@ -134,4 +134,56 @@
 #logo-background svg {
 	height: 25vh;
 	fill: var(--dark);
+	opacity: 0.2;
+}
+
+.animate-color-highlight {
+	animation: color-highlight 10s infinite alternate;
+}
+@keyframes color-highlight {
+	0% {
+		/* fill: var(--dominant); */
+		filter: drop-shadow(0 0 5px var(--dominant));
+	}
+	50% {
+		/* fill: var(--highlight); */
+		filter: drop-shadow(0 0 5px var(--action));
+	}
+	100% {
+		/* fill: var(--highlight); */
+		filter: drop-shadow(0 0 5px var(--highlight));
+	}
+}
+
+code.snippet {
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+code.snippet button {
+	position: absolute;
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+	bottom: 0;
+	right: 0;
+	color: var(--action);
+	/* border: solid var(--border-s) var(--action); */
+}
+
+td.left {
+	text-align: left;
+}
+td.center {
+	text-align: center;
+}
+td.right {
+	text-align: right;
+}
+td.justify {
+	text-align: justify;
 }

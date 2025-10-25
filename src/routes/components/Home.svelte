@@ -5,7 +5,7 @@
 
 <section id="home">
 	<div class="flx center relative">
-		<div id="logo-background" class="h-10vh absolute glow--l glow-dark">
+		<div id="logo-background" class="h-10vh absolute glow--l glow-dark animate-color-highlight">
 			<Logo />
 		</div>
 		<hr class="h-2vh" />
@@ -31,11 +31,8 @@
 	<div class="flx-x txt--left">
 		<span>
 			<code class="badge back-dark pad-s">itagoglow.css</code> is a minimal CSS utility library designed
-			for rapid development of visually appealing, glowing user interfaces.
+			for rapid development of visually appealing user interfaces. Use it to build responsive, modern web layouts with clean, semantic classes and minimal
+			overhead.
 		</span>
-		<span
-			>Use it to build responsive, modern web layouts with clean, semantic classes and minimal
-			overhead.</span
-		>
 	</div>
 </section>
